@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Gabes JavaScript Quiz</title>
+  </head>
+  <body>
+    <!-- Start header -->
+    <nav class="navbar navbar-expand-md fixed-top">
+      <div class="container-fluid">
+            <div id="highscore" class="nav-item nav-link"> View High Scores</div>
+            <h1 id="navbar-title">Timed Quiz Game</h1>
+            <table id=timers style="visibility: hidden;">
+              <tr>
+                <td> Time left in Game: </td>
+                <td> <span id="gameTimer" class="nav-item"></span> </td>
+              </tr>
+               <tr>
+                <td>Time left for Question:</td>
+                <td> <span id="quesTimer" class="nav-item"></span> </td>
+              </tr>
+            </table>
+        </div>
+      </div>
+    </nav>
+    <!-- end header -->
+    <!-- start Content -->
+    <div class="container-fluid">
+      <!-- need a place for the intro instructions and quiz -->
+      <section id="details"> </section>
+    </div>    
+  <!-- End Content -->
+
+  <!-- Start Footer -->
+    <nav class="navbar fixed-bottom footer">
+        <div class="footer-text">An original Website by Me</div>
+    </nav>
+  <!-- End Footer -->
+
+    <!-- read in file containing questions for quiz -->
+    <script src='./questions.js'></script>
+    <!-- read in javascript file  -->
+    <script src='./script.js'></script>
+  </body>
+</html>

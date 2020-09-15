@@ -1,0 +1,141 @@
+body {
+  /* image for background */
+  background-image: url('./images/low_contrast_linen.png');
+
+  /* font parameters */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+
+  /* added padding to prevent navbar overlap. (100 based on browser inpector of size) */
+  padding-top: 90px;
+}
+
+button {
+  margin: 1em;
+}
+
+.navbar {
+  background-color: #73919b;  
+  color: #b6d7e2;  
+  /* pulls everything down to push up against bottom border */
+  padding-bottom: 0;
+
+  /* allows ??? to control the horizontal position */
+  padding-left: 0;
+
+  /* creates solid line for the bottom border  */
+  border-bottom: solid;
+  border-bottom-color: #ccc;
+  width: 100%;
+}
+
+#navbar-title {
+  padding: 15px;
+  font-size: 30px;
+  color: #fff !important; /* TODO can we do this without the !important */
+}
+
+/* container for nav header */
+.container-fluid {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.nav-link {
+  text-decoration: none;
+  /* padding-left: 0%; */
+  /* padding-right: 0%; */
+  /* color: #777 !important; */
+}
+
+/* Change the color of links on hover */
+.nav-link:hover {
+  /* question how do i impact these values without using important */
+  /* background-color: #4Cabc2 !important; */
+  background-color: #b6d7e2;  
+  /* color: #fff !important; */
+  color: #666;
+}
+
+.right {
+ 
+}
+
+#details {
+  /* background-color: #73919b;   */
+  background-color: #b6d7e2;  
+  /* provides spacing between the top and bottom nav bars and the content */
+  margin-top: 20px;
+  margin-bottom: 80px;
+
+  /* provide spaceing around the text */
+  padding: 40px;
+} 
+ 
+
+li {
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #897d9a;
+  color: #fff;
+  font-size: 1.5em;
+  line-height: 1.5;
+  list-style-type: none;
+}
+
+li:hover {
+  background-color: #9e9268;
+}
+
+#answer-image {
+  float: left;
+  padding-right: 1em;
+  padding-top: 0.25em;
+}
+
+#startQuiz{
+  /* TODO style buttom */
+}
+
+.footer {
+  /* set text properties */
+  background-color: #666;
+  
+  /* sets height of footer*/
+  height: 10%;
+  
+  /* sets properties for footer border*/
+  border-top: solid;
+  border-top-color: #b6d7e2;  
+  border-top-width: 8px;
+}
+
+.footer-text {
+  /* forces text across the entire screen so it has a center */
+  width: 100%;
+  text-align: center;
+
+  font-size: 10px;
+  color:#fff; 
+}
+
+/* media query for screen size to be applied to center text to switch at same time as navbar */
+@media (max-width: 768px) {
+  .container-fluid {
+    /* removes paddding on either side */
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+/* removes verticle lines between text */
+  li {
+    border-right: none;
+  }
+
+/* collapses space between menu options when they stack vertically*/
+  .nav-link{
+    padding: 1px;
+  }
+}

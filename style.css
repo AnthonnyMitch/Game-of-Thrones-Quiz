@@ -1,6 +1,6 @@
 body {
   /* image for background */
-  background-image: url('./images/low_contrast_linen.png');
+  background-image: url(./y-so-serious/y-so-serious.png);
 
   /* font parameters */
   font-family: Arial, Helvetica, sans-serif;
@@ -15,8 +15,8 @@ button {
 }
 
 .navbar {
-  background-color: #73919b;  
-  color: #b6d7e2;  
+  background-color: #9e5506;  
+  color: #000000;  
   /* pulls everything down to push up against bottom border */
   padding-bottom: 0;
 
@@ -25,14 +25,14 @@ button {
 
   /* creates solid line for the bottom border  */
   border-bottom: solid;
-  border-bottom-color: #ccc;
+  border-bottom-color: rgb(0, 0, 0);
   width: 100%;
 }
 
 #navbar-title {
   padding: 15px;
   font-size: 30px;
-  color: #fff !important; /* TODO can we do this without the !important */
+  color: rgb(0, 0, 0) !important; /* TODO can we do this without the !important */
 }
 
 /* container for nav header */
@@ -52,7 +52,7 @@ button {
 .nav-link:hover {
   /* question how do i impact these values without using important */
   /* background-color: #4Cabc2 !important; */
-  background-color: #b6d7e2;  
+  background-color: #e2cfb6;  
   /* color: #fff !important; */
   color: #666;
 }
@@ -63,7 +63,7 @@ button {
 
 #details {
   /* background-color: #73919b;   */
-  background-color: #b6d7e2;  
+  background-color: #f0d18f;  
   /* provides spacing between the top and bottom nav bars and the content */
   margin-top: 20px;
   margin-bottom: 80px;
@@ -101,14 +101,14 @@ li:hover {
 
 .footer {
   /* set text properties */
-  background-color: #666;
+  background-color:#9e5506;
   
   /* sets height of footer*/
   height: 10%;
   
   /* sets properties for footer border*/
   border-top: solid;
-  border-top-color: #b6d7e2;  
+  border-top-color: #000000;  
   border-top-width: 8px;
 }
 
@@ -118,7 +118,7 @@ li:hover {
   text-align: center;
 
   font-size: 10px;
-  color:#fff; 
+  color:rgb(0, 0, 0); 
 }
 
 /* media query for screen size to be applied to center text to switch at same time as navbar */

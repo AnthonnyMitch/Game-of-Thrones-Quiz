@@ -11,7 +11,7 @@ var gotQuestions = [
     },
     {
       title: "How did Joffrey Baratheon die?",
-      choices: ["COVID-19", "Plain Crash", "Poison", "a punta e' palo"],
+      choices: ["COVID-19", "Plane Crash", "Poison", "a punta e' palo"],
       answer: "Poison"
     },
     {

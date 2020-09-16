@@ -1,12 +1,12 @@
-body {
-  /* image for background */
+body{
+  
   background-image: url(./y-so-serious/y-so-serious.png);
 
-  /* font parameters */
+  
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
 
-  /* added padding to prevent navbar overlap. (100 based on browser inpector of size) */
+  
   padding-top: 90px;
 }
 
@@ -17,13 +17,13 @@ button {
 .navbar {
   background-color: #9e5506;  
   color: #000000;  
-  /* pulls everything down to push up against bottom border */
+  
   padding-bottom: 0;
 
-  /* allows ??? to control the horizontal position */
+  
   padding-left: 0;
 
-  /* creates solid line for the bottom border  */
+  
   border-bottom: solid;
   border-bottom-color: rgb(0, 0, 0);
   width: 100%;
@@ -32,10 +32,10 @@ button {
 #navbar-title {
   padding: 15px;
   font-size: 30px;
-  color: rgb(0, 0, 0) !important; /* TODO can we do this without the !important */
+  color: rgb(0, 0, 0) !important; 
 }
 
-/* container for nav header */
+
 .container-fluid {
   padding-left: 5%;
   padding-right: 5%;
@@ -43,17 +43,14 @@ button {
 
 .nav-link {
   text-decoration: none;
-  /* padding-left: 0%; */
-  /* padding-right: 0%; */
-  /* color: #777 !important; */
+  
 }
 
-/* Change the color of links on hover */
+
 .nav-link:hover {
-  /* question how do i impact these values without using important */
-  /* background-color: #4Cabc2 !important; */
+
   background-color: #e2cfb6;  
-  /* color: #fff !important; */
+ 
   color: #666;
 }
 
@@ -62,13 +59,12 @@ button {
 }
 
 #details {
-  /* background-color: #73919b;   */
+  
   background-color: #f0d18f;  
-  /* provides spacing between the top and bottom nav bars and the content */
   margin-top: 20px;
   margin-bottom: 80px;
 
-  /* provide spaceing around the text */
+ 
   padding: 40px;
 } 
  
@@ -96,24 +92,24 @@ li:hover {
 }
 
 #startQuiz{
-  /* TODO style buttom */
+
 }
 
 .footer {
-  /* set text properties */
+  
   background-color:#9e5506;
   
-  /* sets height of footer*/
+  
   height: 10%;
   
-  /* sets properties for footer border*/
+ 
   border-top: solid;
   border-top-color: #000000;  
   border-top-width: 8px;
 }
 
 .footer-text {
-  /* forces text across the entire screen so it has a center */
+ 
   width: 100%;
   text-align: center;
 
@@ -121,20 +117,20 @@ li:hover {
   color:rgb(0, 0, 0); 
 }
 
-/* media query for screen size to be applied to center text to switch at same time as navbar */
+
 @media (max-width: 768px) {
   .container-fluid {
-    /* removes paddding on either side */
+    
     padding-left: 0;
     padding-right: 0;
   }
 
-/* removes verticle lines between text */
+
   li {
     border-right: none;
   }
 
-/* collapses space between menu options when they stack vertically*/
+
   .nav-link{
     padding: 1px;
   }

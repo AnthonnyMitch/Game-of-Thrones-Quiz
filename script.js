@@ -1,3 +1,5 @@
+
+
 //Pulling all elements from HTML
 let highscoreDiv = document.querySelector("#highscore");
 let gameTimerEl = document.querySelector("#gameTimer");
@@ -41,7 +43,7 @@ function init() {
   instructions.setAttribute("id", "instructions");
   instructions.textContent = " Answer right and you will be rewarded, Answer wrong and you will be penalize";
 
-  // adding more question - this should move into loop or function
+ 
   // creates button to start the game
   let startGameOfThronesQuiz = document.createElement("button");
   startGameOfThronesQuiz.setAttribute("id", "startGameOfThronesQuiz");
@@ -63,7 +65,7 @@ function init() {
 
 }
 
-// function to clear details element of all children
+// function to clear details 
 function clearDetails() {
   mainEl.innerHTML = "";
 }
@@ -84,11 +86,11 @@ function reset() {
 //start game
 function playQuiz(questionSet) {
   if (test) { console.log("--- playQuiz ---"); }
-  // select quiz randomize questions
+
 
   quiz = setUpQuestions(questionSet);
 
-  // displays timers
+
   timerTab.setAttribute("style", "visibility: visible;");
 
   // Start timers here
@@ -98,11 +100,11 @@ function playQuiz(questionSet) {
   startGameTimer();
   renderTime();
 
-  //go to first question
+ 
   presentQuestion();
 }
 
-// function to get random question out of arrayay
+
 function setUpQuestions(array) {
   if (test) { console.log("--- setUpQuestions ---"); }
 
@@ -114,33 +116,27 @@ function setUpQuestions(array) {
   return ranQuest;
 }
 
-// function to redraw screen with  question 
+ 
 function presentQuestion() {
   if (test) { console.log("--- presentQuestion ---"); }
-  // if (test) {console.log("current.choices[i] " + current.choices);}
-
-  //reset time allows to answer question
+ 
   questionSecElapsed = 0;
 
-  // checks for no more questions and exits
+  
   if (quiz.length === 0) {
     endOfGame();
     return;
   }
 
-  // call question timer here
-  // reduceQUiz global
-
-  //sets currentrent object (current - question) by pulling out of reducedQuiz arrayay leaving the remaining quetions in the arrayay
+ 
   currentrentQuestion = quiz.pop();
 
-  //clears html to draw questions
+  
   clearDetails();
 
-  // add question to screen
-  //build out display for new item
+  
   let question = document.createElement("h1");
-  // adds data value
+ 
   question.setAttribute("question", currentrentQuestion.title);
   question.textContent = currentrentQuestion.title;
   mainEl.appendChild(question)
@@ -165,7 +161,7 @@ function presentQuestion() {
   if (test) { console.log("current", currentrentQuestion); }
 
   // get answer from user
-  // using the anymous function delays the invocation of the scoreAnswer
+ 
   choiceBox.addEventListener("click", function () {
     scoreAnswer(currentrentQuestion);
   });
@@ -174,17 +170,17 @@ function presentQuestion() {
 
 function scoreAnswer(current) {
   if (test) { console.log("--- scoreAnswer ---"); }
-  // ensure that the event on the li
+ 
   var e = event.target;
   if (e.matches("li")) {
     let selectedItem = e.textContent;
-    // if (test) { console.log("check quiz " + quiz.length); }
+ 
     if (test) { console.log("selectedItem quiz " + selectedItem); }
-    // if (test) { console.log("selectedItem current " , current.answer); }
+ 
     if (selectedItem === current.answer) {
-      // if (test) { console.log("correct answer");}
+ 
       score += questionDuration - questionSecElapsed;
-      //TODO music 
+  
     } else {
       if (test) { console.log("wrong answer"); }
       //penelty for being wrong
@@ -199,7 +195,7 @@ function scoreAnswer(current) {
 
 function showAnswers(current) {
   if (test) { console.log("--- showAnswer ---"); }
-  // if (test) { console.log("sa length",current.choices.length);}
+ 
   if (test) { console.log("sa qanda", current); }
   if (test) { console.log("selected ", selectedItem); }
 
@@ -208,10 +204,10 @@ function showAnswers(current) {
     if (test) { console.log("sa in for ", i); }
 
     let questid = "#questionNum-" + i;
-    // if (test) { console.log("sa qn", questid );}
+ 
     let questrow = document.querySelector(questid);
 
-    // if (test) { console.log("questrow",questrow);}
+    
 
     if (test) { console.log("saf selected" + selectedItem + "<"); }
     if (test) { console.log("saf color test >" + current.choices[i] + "<"); }
@@ -224,11 +220,11 @@ function showAnswers(current) {
       questrow.setAttribute("style", "background-color: green");
     }
   }
-  // pause so user can see results
+  
   setTimeout(presentQuestion, 500);
 }
 
-// function to set time for game timer
+
 function setGameTime() {
   if (test) { console.log("--- setGameTime ---"); }
   if (test) { console.log("gameDuration " + gameDuration); }
@@ -238,16 +234,12 @@ function setGameTime() {
 
 
 function renderTime() {
-  // if (test) { console.log(" --- renderTime --- "); }
-  // if (test) { console.log("gameSecElapsed " + gameSecElapsed); }
-  // if (test) { console.log("gameDuration " + gameDuration); }
-  // if (test) { console.log("questionDuration " + questionDuration); }
-
+  
   gameTimerEl.textContent = gameDuration - gameSecElapsed;
   quesTimerEl.textContent = questionDuration - questionSecElapsed;
 
   if ((questionDuration - questionSecElapsed) < 1) {
-    // game penelty for letting timer run out
+    
     gameDuration -= 10;
     if (test) { console.log("too slow"); }
     presentQuestion();
@@ -276,7 +268,7 @@ function stopTime() {
   clearInterval(gameInterval);
 }
 
-// function of end of game
+
 function endOfGame() {
   if (test) { console.log("--- endOfGame ---"); }
   stopTime();
@@ -288,18 +280,18 @@ function endOfGame() {
   heading.setAttribute("id", "main-heading");
   heading.textContent = "GAME OVER - I hope you have enjoyed this";
 
-  // creates elements with the instructions for the game
+ 
   let instructions = document.createElement("p");
   instructions.setAttribute("id", "instructions");
   instructions.textContent = " Your score is " + score;
 
-  // creates button to start the game
+ 
   let playAgain = document.createElement("button");
   playAgain.setAttribute("id", "playAgain");
   playAgain.setAttribute("class", "btn btn-dark");
   playAgain.textContent = "Play again";
 
-  // creates input for user to add initials
+  
   let par = document.createElement("p");
 
   let initialsLabel = document.createElement("label");
@@ -327,10 +319,10 @@ function endOfGame() {
     initialsInput.value = initialsInput.value.toUpperCase();
     if (initialsInput.value.length === 3) {
 
-      //create object for this score
+     
       let thisScore = [{ type: quizType, name: initialsInput.value, score: score }];
 
-      //get highscores from memory
+      
       let storedScores = JSON.parse(localStorage.getItem("highScores"));
       if (test) { console.log("storedScore", storedScores); }
 
@@ -355,20 +347,19 @@ function highScores() {
   //get scores from storage
   let storedScores = JSON.parse(localStorage.getItem("highScores"));
 
-  // draw heading
+ 
   let heading = document.createElement("h2");
   heading.setAttribute("id", "main-heading");
   heading.textContent = "Top 5 High Score Hall of Fame";
 
   mainEl.appendChild(heading);
 
-  // Render a new li for each score
-  // TODO check for this error 
+  
   if (storedScores !== null) {
-    // sort scores
+   
     storedScores.sort((a, b) => (a.score < b.score) ? 1 : -1);
 
-    // sets the number of scores to display to 5 or the number of games played. Which ever is less
+    
     let numScores2Display = 5;
     if (storedScores.length < 5) {
       numScores2Display = storedScores.length;
@@ -388,7 +379,7 @@ function highScores() {
   }
 
 
-  // creates button to start the game
+  
   let playAgain = document.createElement("button");
   playAgain.setAttribute("id", "playAgain");
   playAgain.setAttribute("class", "btn btn-dark");
